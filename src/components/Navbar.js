@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import './Navbar.css';
+import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 
 function Navbar() {
+
+    const navigate = useNavigate();
+    const [productCount, setProductCount] = useState(0);
+    
+    function LoginNav(){
+        navigate("/login");
+    }
+
+    function CartNav(){
+        navigate("/cart");
+    }
+
     return (
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -34,7 +49,8 @@ function Navbar() {
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                                 <button className="btn btn-outline-success" type="submit">Search</button>
                         </form>
-                        <a href="/login"><button style={{marginLeft:5}} className="btn btn-outline-success" type="button">Login</button></a>
+                        <button style={{marginLeft:5}} className="btn btn-outline-success" type="button" onClick={LoginNav}>Login</button>
+                        <FontAwesomeIcon icon={faCartShopping} size="2xl" className="cart" onClick={CartNav}/><span style={{color:"white", fontWeight:"bold"}}>{productCount}</span>
                     </div>
                 </div>
             </nav>

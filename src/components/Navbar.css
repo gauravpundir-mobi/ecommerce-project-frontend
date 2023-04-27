@@ -15,8 +15,18 @@ a{
     color: aliceblue !important;
 }
 
-button{
+.btn-outline-success {
     background-color: aliceblue !important;
     color: rgb(206, 103, 103) !important;
     font-weight: bold !important;
+}
+
+.d-flex .form-control:focus {
+    box-shadow: 0cap;
+}
+
+.cart {
+    margin: 5px;
+    color:white;
+    cursor: pointer;
 }
