@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import './Navbar.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
-
+import { Context } from "../App";
 
 function Navbar() {
 
+    const [quantity, setQuantity] = useContext(Context);
+
     const navigate = useNavigate();
-    const [productCount, setProductCount] = useState(0);
     
     function LoginNav(){
         navigate("/login");
@@ -22,26 +23,20 @@ function Navbar() {
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
-                    <i><a className="navbar-brand" href="#">Online Store</a></i>
+                    <i><Link to="/" className="navbar-brand">Online Store</Link></i>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Winter</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Summer</a>
-                            </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <Link className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i>Categories</i>
-                                </a>
+                                </Link>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="#">Men</a></li>
-                                    <li><a className="dropdown-item" href="#">Women</a></li>
-                                    <li><a className="dropdown-item" href="#">Kids</a></li>
+                                    <li><Link className="dropdown-item" to="/men">Men</Link></li>
+                                    <li><Link className="dropdown-item" to="/women">Women</Link></li>
+                                    <li><Link className="dropdown-item" to="kids">Kids</Link></li>
                                 </ul>
                             </li>
                         </ul>
@@ -50,7 +45,7 @@ function Navbar() {
                                 <button className="btn btn-outline-success" type="submit">Search</button>
                         </form>
                         <button style={{marginLeft:5}} className="btn btn-outline-success" type="button" onClick={LoginNav}>Login</button>
-                        <FontAwesomeIcon icon={faCartShopping} size="2xl" className="cart" onClick={CartNav}/><span style={{color:"white", fontWeight:"bold"}}>{productCount}</span>
+                        <FontAwesomeIcon icon={faCartShopping} size="2xl" className="cart" onClick={CartNav}/><span style={{color:"white", fontWeight:"bold"}}>{quantity}</span>
                     </div>
                 </div>
             </nav>
