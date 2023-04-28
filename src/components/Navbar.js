@@ -7,7 +7,9 @@ import { Context } from "../App";
 
 function Navbar() {
 
-    const [quantity, setQuantity] = useContext(Context);
+    // const {btn_name, quantity } = useContext(Context);
+
+    // console.log(btn_name, quantity);
 
     const navigate = useNavigate();
     
@@ -27,7 +29,7 @@ function Navbar() {
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div className="collapse navbar-collapse">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item dropdown">
                                 <Link className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,8 +46,8 @@ function Navbar() {
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                                 <button className="btn btn-outline-success" type="submit">Search</button>
                         </form>
-                        <button style={{marginLeft:5}} className="btn btn-outline-success" type="button" onClick={LoginNav}>Login</button>
-                        <FontAwesomeIcon icon={faCartShopping} size="2xl" className="cart" onClick={CartNav}/><span style={{color:"white", fontWeight:"bold"}}>{quantity}</span>
+                        <button style={{marginLeft:5}} className="btn btn-outline-success" type="button" onClick={LoginNav}>{"Login"}</button>
+                        <FontAwesomeIcon icon={faCartShopping} size="2xl" className="cart" onClick={CartNav}/><span style={{color:"white", fontWeight:"bold"}}>0</span>
                     </div>
                 </div>
             </nav>

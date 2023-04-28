@@ -5,10 +5,12 @@ import { Context } from '../App';
 
 function Dashboard() {
 
-    const [quantity, setQuantity] = useContext(Context);
+
+
+    const [quantity, setQuantity] = useState(1);
 
     function quantityIncrease(){
-        setQuantity(quantity+1);
+        setQuantity(1);
     }
 
     function quantityDecrease(){
@@ -43,13 +45,13 @@ function Dashboard() {
                     data.map(data => {
                         return (
                             <div className="card">
-                                <img className="card-img-top" src={data.image} alt="Card image cap" />
+                                <img className="card-img-top" src={data.image} alt="" />
                                 <div className="card-body">
                                     <h5 className="card-title">{data.name}</h5>
                                     <p className="card-text">{data.description}</p>
                                     <div className="quantity-div">
                                         <input type="button" id = {data.id+"minus"} className="quantity btn-primary" value="-" onClick={quantityDecrease}/>
-                                        <input type="button" id = {data.id} className="quantity" value={quantity}/>
+                                        <input type="button" id = {data.id} className="quantity" value={0}/>
                                         <input type="button" id = {data.id+"plus"} className="quantity btn-primary" value="+" onClick={quantityIncrease}/>
                                     </div>
                                     <div className='rupees'>

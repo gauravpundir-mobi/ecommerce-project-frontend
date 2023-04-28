@@ -7,16 +7,16 @@ function Carousel() {
             <div id="carouselExample" className="carousel slide">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src="summer.jpg" className="d-block w-100" alt="..." />
+                        <img src="summer.jpg" className="d-block w-100" alt=""/>
                     </div>
                     <div className="carousel-item">
-                        <img src="winter.jpg" className="d-block w-100" alt="..." />
+                        <img src="winter.jpg" className="d-block w-100" alt=""/>
                     </div>
                     <div className="carousel-item">
-                        <img src="summer.jpg" className="d-block w-100" alt="..." />
+                        <img src="summer.jpg" className="d-block w-100" alt=""/>
                     </div>
                     <div className="carousel-item">
-                        <img src="winter.jpg" className="d-block w-100" alt="..." />
+                        <img src="winter.jpg" className="d-block w-100" alt=""/>
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
